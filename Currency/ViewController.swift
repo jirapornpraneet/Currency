@@ -12,6 +12,8 @@ import SwiftyJSON
 import AAPickerView
 class ViewController: UIViewController {
     @IBOutlet weak var currencyFieldPicker: AAPickerView!
+    @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var ratesLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         configCurrencyFieldPickerPicker()
@@ -23,6 +25,9 @@ class ViewController: UIViewController {
                 print("JSON: \(json)")
                 print(response)
                 print("rates")
+                let show = json["rates"]["THB"]
+                print("JSON: \(show)")
+                self.currencyLabel.text = "\(show)"
             case .failure(let error):
                 print(error)
             }
