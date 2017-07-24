@@ -1,0 +1,24 @@
+PODS:
+  - AAPickerView (0.1.0)
+  - Alamofire (4.5.0)
+  - SwiftLint (0.20.1)
+  - SwiftyButton (0.6.0)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - AAPickerView (~> 0.1.0)
+  - Alamofire (~> 4.5.0)
+  - SwiftLint (~> 0.20.1)
+  - SwiftyButton (~> 0.6.0)
+  - SwiftyJSON (~> 3.1.4)
+
+SPEC CHECKSUMS:
+  AAPickerView: 6766b83b3401d117c78cb4efb1cf4256a659d6a9
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
+  SwiftyButton: 4c9b61c499f172971a1b8c2eebbbdc20a26d8a08
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 385cccec394d4433f11f6a24aedd009484fce5b1
+
+COCOAPODS: 1.2.1
