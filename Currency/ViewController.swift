@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import AAPickerView
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var currencyFieldPicker: AAPickerView!
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var currencyField: UITextField!
@@ -21,6 +21,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var selectConvertCurrencies = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        currencyField.text = ""
+        currencyField.delegate = self
 //        configCurrencyFieldPickerPicker()
 //        configConvertCurrencyFieldPickerPicker()
         currencyPickerView.delegate = self
@@ -132,5 +134,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        currencyField.resignFirstResponder()
+        return true
     }
 }
