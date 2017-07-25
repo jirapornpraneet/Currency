@@ -13,16 +13,12 @@ import AAPickerView
 class ViewController: UIViewController {
     @IBOutlet weak var currencyFieldPicker: AAPickerView!
     @IBOutlet weak var currencyLabel: UILabel!
-    @IBOutlet weak var currencyLabel2: UILabel!
     @IBOutlet weak var currencyField: UITextField!
     @IBOutlet weak var convertCurrencyFieldPicker: AAPickerView!
     var selectDataCurrencies = ""
     var selectConvertCurrencies = ""
-//    var namesOfIntegers = [Int: Double]()
-//    var json  = [String: String]()
-//    var selectDataCurrencyRates = [Double: String]()
-    var currencyRates = [String:Any]()
-//    var json = [String:Any]()
+    var currencyRates = Dictionary<String, AnyObject>()
+    var json = [String: String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,8 +76,15 @@ class ViewController: UIViewController {
                 let json = JSON(value)
                 let show = self.selectDataCurrencies
                 print("\(show)")
-                let currencyRates = json["rates"]["\(show)"]
+                let currencyRates = json["rates"]["\(show)"].doubleValue
                 print("CurrencyRates: \(currencyRates)")
+                if let currencyAmount  = Double(self.currencyField.text!) {
+                    let resultCurrencyRatesConvert = currencyAmount * currencyRates
+                    self.currencyLabel.text = String(format: "%.02f", (resultCurrencyRatesConvert))
+                } else {
+                    let resultCurrencyRatesConvert = 0 * currencyRates
+                    self.currencyLabel.text = String(format: "%.02f", (resultCurrencyRatesConvert))
+                }
             case .failure(let error):
                 print(error)
             }
