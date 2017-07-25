@@ -29,7 +29,9 @@ class ViewController: UIViewController {
         currencyFieldPicker.pickerType = .StringPicker
         let pathDataCurrencies = Bundle.main.path(forResource: "currencies", ofType: "plist")!
         let dataCurrencies = (NSArray(contentsOfFile: pathDataCurrencies) as? [String])!
-        currencyFieldPicker.stringPickerData = dataCurrencies
+        let pathShowDataCurrencies = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
+        let showDataCurrencies = (NSArray(contentsOfFile: pathShowDataCurrencies) as? [String])!
+        currencyFieldPicker.stringPickerData = showDataCurrencies
         currencyFieldPicker.pickerRow.font = UIFont(name: "American Typewriter", size: 30)
         currencyFieldPicker.toolbar.barTintColor = UIColor(red:0.90, green:0.37, blue:0.37, alpha:1.0)
         currencyFieldPicker.toolbar.tintColor = UIColor(red:0.90, green:0.37, blue:0.37, alpha:1.0)
@@ -37,15 +39,15 @@ class ViewController: UIViewController {
              self.selectDataCurrencies = dataCurrencies[index]
             print("selectedString1 :  ", self.selectDataCurrencies, dataCurrencies[index])
             self.selectDataCurrenciesAPI(base:self.selectDataCurrencies)
-            self.currencyLabel.text = self.selectDataCurrencies
-
         }
     }
        func configConvertCurrencyFieldPickerPicker() {
         convertCurrencyFieldPicker.pickerType = .StringPicker
         let pathDataCurrencies = Bundle.main.path(forResource: "currencies", ofType: "plist")!
         let dataCurrencies = (NSArray(contentsOfFile: pathDataCurrencies) as? [String])!
-        convertCurrencyFieldPicker.stringPickerData = dataCurrencies
+        let pathShowDataCurrencies = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
+        let showDataCurrencies = (NSArray(contentsOfFile: pathShowDataCurrencies) as? [String])!
+        convertCurrencyFieldPicker.stringPickerData = showDataCurrencies
         convertCurrencyFieldPicker.pickerRow.font = UIFont(name: "American Typewriter", size: 30)
         convertCurrencyFieldPicker.toolbar.barTintColor = UIColor(red:0.90, green:0.37, blue:0.37, alpha:1.0)
         convertCurrencyFieldPicker.toolbar.tintColor = UIColor(red:0.90, green:0.37, blue:0.37, alpha:1.0)
@@ -53,7 +55,6 @@ class ViewController: UIViewController {
             self.selectConvertCurrencies = dataCurrencies[index]
             print("selectedString2 :  ", self.selectConvertCurrencies, dataCurrencies[index])
             self.selectDataConvertCurrenciesAPI(base:self.selectConvertCurrencies)
-            self.currencyLabel2.text = self.selectConvertCurrencies
         }
     }
     func selectDataCurrenciesAPI(base:String) {
