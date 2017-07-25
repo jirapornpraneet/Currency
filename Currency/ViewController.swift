@@ -9,12 +9,10 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import AAPickerView
+
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-    @IBOutlet weak var currencyFieldPicker: AAPickerView!
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var currencyField: UITextField!
-    @IBOutlet weak var convertCurrencyFieldPicker: AAPickerView!
     @IBOutlet weak var currencyPickerView: UIPickerView!
     @IBOutlet weak var convertCurrencyPickerView: UIPickerView!
     var selectDataCurrencies = ""
@@ -23,8 +21,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
         currencyField.text = ""
         currencyField.delegate = self
-//        configCurrencyFieldPickerPicker()
-//        configConvertCurrencyFieldPickerPicker()
         currencyPickerView.delegate = self
         currencyPickerView.dataSource = self
         convertCurrencyPickerView.delegate = self
@@ -64,39 +60,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print(dataCurrencies[row])
         }
     }
-//    func configCurrencyFieldPickerPicker() {
-//        currencyFieldPicker.pickerType = .StringPicker
-//        let pathDataCurrencies = Bundle.main.path(forResource: "currencies", ofType: "plist")!
-//        let dataCurrencies = (NSArray(contentsOfFile: pathDataCurrencies) as? [String])!
-//        let pathShowDataCurrencies = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
-//        let showDataCurrencies = (NSArray(contentsOfFile: pathShowDataCurrencies) as? [String])!
-//        currencyFieldPicker.stringPickerData = showDataCurrencies
-//        currencyFieldPicker.pickerRow.font = UIFont(name: "American Typewriter", size: 30)
-//        currencyFieldPicker.toolbar.barTintColor = UIColor(red:0.90, green:0.37, blue:0.37, alpha:1.0)
-//        currencyFieldPicker.toolbar.tintColor = UIColor(red:0.90, green:0.37, blue:0.37, alpha:1.0)
-//        currencyFieldPicker.stringDidChange = { index in
-//             self.selectDataCurrencies = dataCurrencies[index]
-//            print("selectedString1 :  ", self.selectDataCurrencies, dataCurrencies[index])
-//            self.selectDataCurrenciesAPI(base:self.selectDataCurrencies)
-//                }
-//            }
-//        }
-//        
-//       func configConvertCurrencyFieldPickerPicker() {
-//        convertCurrencyFieldPicker.pickerType = .StringPicker
-//        let pathDataCurrencies = Bundle.main.path(forResource: "currencies", ofType: "plist")!
-//        let dataCurrencies = (NSArray(contentsOfFile: pathDataCurrencies) as? [String])!
-//        let pathShowDataCurrencies = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
-//        let showDataCurrencies = (NSArray(contentsOfFile: pathShowDataCurrencies) as? [String])!
-//        convertCurrencyFieldPicker.stringPickerData = showDataCurrencies
-//        convertCurrencyFieldPicker.pickerRow.font = UIFont(name: "American Typewriter", size: 30)
-//        convertCurrencyFieldPicker.toolbar.barTintColor = UIColor(red:0.90, green:0.37, blue:0.37, alpha:1.0)
-//        convertCurrencyFieldPicker.toolbar.tintColor = UIColor(red:0.90, green:0.37, blue:0.37, alpha:1.0)
-//        convertCurrencyFieldPicker.stringDidChange = { index in
-//            self.selectConvertCurrencies = dataCurrencies[index]
-//            print("selectedString2 :  ", self.selectConvertCurrencies, dataCurrencies[index])
-//            self.selectDataConvertCurrenciesAPI(base:self.selectConvertCurrencies)
-//        }
     func selectDataCurrenciesAPI(base:String) {
         let url = String(format:"http://api.fixer.io/latest?base=%@", base)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
