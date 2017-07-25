@@ -25,6 +25,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currencyPickerView.dataSource = self
         convertCurrencyPickerView.delegate = self
         convertCurrencyPickerView.dataSource = self
+        currencyPickerView.layer.cornerRadius = 8
+        currencyPickerView.layer.masksToBounds = true
+        convertCurrencyPickerView.layer.cornerRadius = 8
+        convertCurrencyPickerView.layer.masksToBounds = true
+        currencyField.layer.cornerRadius = 8
+        currencyField.layer.masksToBounds = true
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -67,6 +73,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
+                let show = self.selectConvertCurrencies
+                print("\(show)")
+                let currencyRates = json["rates"]["\(show)"].doubleValue
+                print("CurrencyRates: \(currencyRates)")
+                if let currencyAmount  = Double(self.currencyField.text!) {
+                    let resultCurrencyRatesConvert = currencyAmount * currencyRates
+                    self.currencyLabel.text = String(format: "%.04f", (resultCurrencyRatesConvert))
+                } else {
+                    let resultCurrencyRatesConvert = 0 * currencyRates
+                    self.currencyLabel.text = String(format: "%.03f", (resultCurrencyRatesConvert))
+                }
+
             case .failure(let error):
                 print(error)
             }
@@ -84,10 +102,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 print("CurrencyRates: \(currencyRates)")
                 if let currencyAmount  = Double(self.currencyField.text!) {
                     let resultCurrencyRatesConvert = currencyAmount * currencyRates
-                    self.currencyLabel.text = String(format: "%.02f", (resultCurrencyRatesConvert))
+                    self.currencyLabel.text = String(format: "%.04f", (resultCurrencyRatesConvert))
                 } else {
                     let resultCurrencyRatesConvert = 0 * currencyRates
-                    self.currencyLabel.text = String(format: "%.02f", (resultCurrencyRatesConvert))
+                    self.currencyLabel.text = String(format: "%.03f", (resultCurrencyRatesConvert))
                 }
             case .failure(let error):
                 print(error)
