@@ -72,37 +72,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 print("JSON: \(json)")
                 let show = self.selectConvertCurrencies
                 print("\(show)")
-                var currencyRates = json["rates"]["\(show)"].doubleValue
+                let currencyRates = json["rates"]["\(show)"].doubleValue
                 print("CurrencyRates: \(currencyRates)")
-//                if currencyRates == 0.0 {
-//                    currencyRates = self.currencyAmount
-//                } else {
-//                    return
-//                }
                  self.convert(rates:currencyRates)
             case .failure(let error):
                 print(error)
             }
         }
     }
-//    func selectDataConvertCurrenciesAPI(base: String) {
-//        let url = String(format:"http://api.fixer.io/latest?base=%@", base)
-//        Alamofire.request(url, method: .get).validate().responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//                let show = self.selectDataCurrencies
-//                print("\(show)")
-//                let currencyRates = json["rates"]["\(show)"].doubleValue
-//                print("CurrencyRatesConvert: \(currencyRates)")
-//                let showex = json["rates"]["THB"]
-//                print("Try:",showex)
-//                self.convert(rates:currencyRates)
-//                case .failure(let error):
-//                print(error)
-//            }
-//        }
-//      }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
