@@ -92,7 +92,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.currencyLabel.text = String(format: "%.0f", (resultCurrencyRatesConvert))
             } else {
                 let resultCurrencyRatesConvert = currencyAmount * rates
-                self.currencyLabel.text = String(format: "%.04f", (resultCurrencyRatesConvert))
+                self.currencyLabel.text = String(format: "%.06f", (resultCurrencyRatesConvert))
             }
         } else {
             let resultCurrencyRatesConvert = 0 * rates
