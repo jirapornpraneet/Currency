@@ -25,12 +25,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currencyPickerView.dataSource = self
         convertCurrencyPickerView.delegate = self
         convertCurrencyPickerView.dataSource = self
-        currencyPickerView.layer.cornerRadius = 8
         currencyPickerView.layer.masksToBounds = true
-        convertCurrencyPickerView.layer.cornerRadius = 8
+        currencyPickerView.layer.cornerRadius = 8
         convertCurrencyPickerView.layer.masksToBounds = true
-        currencyField.layer.cornerRadius = 8
+        convertCurrencyPickerView.layer.cornerRadius = 8
         currencyField.layer.masksToBounds = true
+        currencyField.layer.cornerRadius = 8
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -54,15 +54,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let dataCurrencies = (NSArray(contentsOfFile: pathDataCurrencies) as? [String])!
         if pickerView == currencyPickerView {
             selectDataCurrencies = dataCurrencies[row]
-            self.selectDataCurrenciesAPI(base:self.selectDataCurrencies)
+            selectDataCurrenciesAPI(base: selectDataCurrencies)
             print(dataCurrencies[row])
         } else {
             selectConvertCurrencies = dataCurrencies[row]
-            self.selectDataConvertCurrenciesAPI(base:self.selectConvertCurrencies)
+            selectDataConvertCurrenciesAPI(base: selectConvertCurrencies)
             print(dataCurrencies[row])
         }
     }
-    func selectDataCurrenciesAPI(base:String) {
+    func selectDataCurrenciesAPI(base: String) {
         let url = String(format:"http://api.fixer.io/latest?base=%@", base)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
     }
-    func selectDataConvertCurrenciesAPI(base:String) {
+    func selectDataConvertCurrenciesAPI(base: String) {
         let url = String(format:"http://api.fixer.io/latest?base=%@", base)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
