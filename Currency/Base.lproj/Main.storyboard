@@ -23,7 +23,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ใส่จำนวนเงิน" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gY9-XW-ACd">
                                 <rect key="frame" x="38" y="79" width="245" height="30"/>
-                                <color key="backgroundColor" red="0.8669297271573605" green="0.67403685828736293" blue="0.71883106977172806" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="knZ-A7-Z4F"/>
@@ -35,7 +35,7 @@
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PxO-hq-A03">
                                 <rect key="frame" x="48" y="347" width="225" height="145"/>
-                                <color key="backgroundColor" red="0.99545923219999999" green="0.95588789780000005" blue="0.95588789780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.86692972720000006" green="0.67403685830000004" blue="0.7188310698" alpha="0.2100813356" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="gJ3-9I-tb9"/>
                                     <constraint firstAttribute="height" constant="145" id="zzj-l2-xls"/>
@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="21" id="nPS-nX-NZ0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" red="0.91342798219999999" green="0.5127358401836436" blue="0.57379087073042245" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.91342798219999999" green="0.51273584019999996" blue="0.57379087070000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqL-hE-RPF">
@@ -66,7 +66,7 @@
                             </navigationBar>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6f-AF-jCo">
                                 <rect key="frame" x="48" y="151" width="225" height="145"/>
-                                <color key="backgroundColor" red="0.99545923219999999" green="0.95588789783175543" blue="0.95588789783175543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.86692972720000006" green="0.67403685830000004" blue="0.7188310698" alpha="0.2100813356164383" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="nPz-ct-0XA"/>
                                     <constraint firstAttribute="height" constant="145" id="zmH-Hr-VEN"/>
@@ -79,7 +79,7 @@
                                     <constraint firstAttribute="width" constant="134" id="WbD-UH-gwM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.99403156719999997" green="0.53705938369999995" blue="0.55309433880000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.91342798219999999" green="0.51273584019999996" blue="0.57379087070000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ไปยังสกุลเงิน" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HR-El-hmV">
@@ -89,11 +89,11 @@
                                     <constraint firstAttribute="height" constant="21" id="lDd-kZ-PqH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.99403156719999997" green="0.53705938369999995" blue="0.55309433880000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.91342798219999999" green="0.51273584019999996" blue="0.57379087070000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.93293990887104628" blue="0.93352504548060733" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0m7-Jy-UTt" firstAttribute="top" secondItem="PxO-hq-A03" secondAttribute="bottom" constant="32" id="0Pm-uo-ESZ"/>
                             <constraint firstItem="yl1-zU-rmw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A8u-V5-FzU"/>
