@@ -18,6 +18,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var selectDataCurrencies = ""
     var selectConvertCurrencies = ""
     var currencyAmount = 0.0
+    var currencyRates  = 0.0
+//    var show = JSON(String)
+    var showJson = JSON([String: Any]())
     override func viewDidLoad() {
         super.viewDidLoad()
         currencyField.text = ""
@@ -59,7 +62,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print(dataCurrencies[row])
         } else {
             selectConvertCurrencies = dataCurrencies[row]
-            selectDataCurrenciesAPI(base: selectDataCurrencies)
+             selectDataCurrenciesAPI(base: selectDataCurrencies)
             print(dataCurrencies[row])
         }
     }
@@ -68,13 +71,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
+                self.showJson = JSON(value)
+                print("%@", self.showJson["rates"]["RON"])
+                print("%@", self.showJson["rates"]["EUR"])
                 let show = self.selectConvertCurrencies
-                print("\(show)")
-                let currencyRates = json["rates"]["\(show)"].doubleValue
-                print("CurrencyRates: \(currencyRates)")
-                 self.convert(rates:currencyRates)
+                print("\(self.show)")
+                let currencyRates = self.showJson["rates"]["\(self.show)"]
+                 print(self.currencyRates)
+                print("CurrencyRates: \(self.currencyRates)")
+                 self.convert(rates:self.currencyRates)
             case .failure(let error):
                 print(error)
             }
