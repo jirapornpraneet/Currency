@@ -36,18 +36,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        let pathShowDataCurrencies = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
-        let showDataCurrencies = (NSArray(contentsOfFile: pathShowDataCurrencies) as? [String])!
+        let pathShowDataCurrenciesPickerView = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
+        let showDataCurrenciesPickerView = (NSArray(contentsOfFile: pathShowDataCurrenciesPickerView) as? [String])!
         if pickerView == currencyPickerView {
-            return showDataCurrencies.count
+            return showDataCurrenciesPickerView.count
         } else {
-            return showDataCurrencies.count
+            return showDataCurrenciesPickerView.count
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            let pathShowDataCurrencies = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
-            let showDataCurrencies = (NSArray(contentsOfFile: pathShowDataCurrencies) as? [String])!
-            return showDataCurrencies[row]
+            let pathShowDataCurrenciesPickerView = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
+            let showDataCurrenciesPickerView = (NSArray(contentsOfFile: pathShowDataCurrenciesPickerView) as? [String])!
+            return showDataCurrenciesPickerView[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             let pathDataCurrencies = Bundle.main.path(forResource: "currencies", ofType: "plist")!
