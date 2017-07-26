@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var convertCurrencyPickerView: UIPickerView!
     var selectDataCurrencies = ""
     var selectConvertCurrencies = ""
+    var currencyAmount = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         currencyField.text = ""
@@ -58,7 +59,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print(dataCurrencies[row])
         } else {
             selectConvertCurrencies = dataCurrencies[row]
-            selectDataConvertCurrenciesAPI(base: selectConvertCurrencies)
+            selectDataCurrenciesAPI(base: selectDataCurrencies)
             print(dataCurrencies[row])
         }
     }
@@ -71,46 +72,56 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 print("JSON: \(json)")
                 let show = self.selectConvertCurrencies
                 print("\(show)")
-                let currencyRates = json["rates"]["\(show)"].doubleValue
+                var currencyRates = json["rates"]["\(show)"].doubleValue
                 print("CurrencyRates: \(currencyRates)")
-                if let currencyAmount  = Double(self.currencyField.text!) {
-                    let resultCurrencyRatesConvert = currencyAmount * currencyRates
-                    self.currencyLabel.text = String(format: "%.04f", (resultCurrencyRatesConvert))
-                } else {
-                    let resultCurrencyRatesConvert = 0 * currencyRates
-                    self.currencyLabel.text = String(format: "%.03f", (resultCurrencyRatesConvert))
-                }
-
+//                if currencyRates == 0.0 {
+//                    currencyRates = self.currencyAmount
+//                } else {
+//                    return
+//                }
+                 self.convert(rates:currencyRates)
             case .failure(let error):
                 print(error)
             }
         }
     }
-    func selectDataConvertCurrenciesAPI(base: String) {
-        let url = String(format:"http://api.fixer.io/latest?base=%@", base)
-        Alamofire.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                let show = self.selectDataCurrencies
-                print("\(show)")
-                let currencyRates = json["rates"]["\(show)"].doubleValue
-                print("CurrencyRates: \(currencyRates)")
-                if let currencyAmount  = Double(self.currencyField.text!) {
-                    let resultCurrencyRatesConvert = currencyAmount * currencyRates
-                    self.currencyLabel.text = String(format: "%.04f", (resultCurrencyRatesConvert))
-                } else {
-                    let resultCurrencyRatesConvert = 0 * currencyRates
-                    self.currencyLabel.text = String(format: "%.03f", (resultCurrencyRatesConvert))
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-      }
+//    func selectDataConvertCurrenciesAPI(base: String) {
+//        let url = String(format:"http://api.fixer.io/latest?base=%@", base)
+//        Alamofire.request(url, method: .get).validate().responseJSON { response in
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//                let show = self.selectDataCurrencies
+//                print("\(show)")
+//                let currencyRates = json["rates"]["\(show)"].doubleValue
+//                print("CurrencyRatesConvert: \(currencyRates)")
+//                let showex = json["rates"]["THB"]
+//                print("Try:",showex)
+//                self.convert(rates:currencyRates)
+//                case .failure(let error):
+//                print(error)
+//            }
+//        }
+//      }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func convert(rates: Double) {
+        if let currencyAmount  = Double(self.currencyField.text!) {
+            print(rates)
+            if rates == 0.0 {
+                let resultCurrencyRatesConvert = currencyAmount * currencyAmount
+                self.currencyLabel.text = String(format: "%.0f", (resultCurrencyRatesConvert))
+            } else {
+                let resultCurrencyRatesConvert = currencyAmount * rates
+                self.currencyLabel.text = String(format: "%.04f", (resultCurrencyRatesConvert))
+            }
+        } else {
+            let resultCurrencyRatesConvert = 0 * rates
+            self.currencyLabel.text = String(format: "%.03f", (resultCurrencyRatesConvert))
+        }
+
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
