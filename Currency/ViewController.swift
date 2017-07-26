@@ -36,13 +36,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        let pathShowDataCurrencies = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
+        let showDataCurrencies = (NSArray(contentsOfFile: pathShowDataCurrencies) as? [String])!
         if pickerView == currencyPickerView {
-            let pathShowDataCurrencies = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
-            let showDataCurrencies = (NSArray(contentsOfFile: pathShowDataCurrencies) as? [String])!
             return showDataCurrencies.count
         } else {
-            let pathShowDataCurrencies = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
-            let showDataCurrencies = (NSArray(contentsOfFile: pathShowDataCurrencies) as? [String])!
             return showDataCurrencies.count
         }
     }
@@ -52,15 +50,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return showDataCurrencies[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == currencyPickerView {
             let pathDataCurrencies = Bundle.main.path(forResource: "currencies", ofType: "plist")!
             let dataCurrencies = (NSArray(contentsOfFile: pathDataCurrencies) as? [String])!
+        if pickerView == currencyPickerView {
             selectDataCurrencies = dataCurrencies[row]
             self.selectDataCurrenciesAPI(base:self.selectDataCurrencies)
             print(dataCurrencies[row])
         } else {
-            let pathDataCurrencies = Bundle.main.path(forResource: "currencies", ofType: "plist")!
-            let dataCurrencies = (NSArray(contentsOfFile: pathDataCurrencies) as? [String])!
             selectConvertCurrencies = dataCurrencies[row]
             self.selectDataConvertCurrenciesAPI(base:self.selectConvertCurrencies)
             print(dataCurrencies[row])
@@ -112,7 +108,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
       }
-        override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
