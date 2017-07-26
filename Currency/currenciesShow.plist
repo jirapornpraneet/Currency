@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <array>
-        <string>หยวนจีน (CNY)</string>
-        <string>โปแลนด์ Zloty (PLN)</string>
-        <string>บาทไทย (THB)</string>
-        <string>บัลแกเรีย Lev (BGN)</string>
-        <string>ดอลลาร์ออสเตรเลีย (AUD)</string>
-        <string>โครนสวีเดน (SEK)</string>
-        <string>เงิน Shekel ใหม่ของอิสราเอล (ILS)</string>
-        <string>เรียลของบราซิล (BRL)</string>
-        <string>Krone เดนมาร์ก (DKK)</string>
-        <string>ปอนด์ (GBP)</string>
-        <string>รูเบิลรัสเซีย (RUB)</string>
-        <string>เหรียญสหรัฐฯ (CHF)</string>
-        <string>เงินเปโซเม็กซิกัน (MXN)</string>
-        <string>Kuna โครเอเชีย (HRK)</string>
-        <string>Leu โรมาเนีย (RON)</string>
-        <string>ลีราตุรกีใหม่ (TRY)</string>
-        <string>ดอลลาร์สิงคโปร์ (SGD)</string>
-        <string>ยูโร (EUR)</string>
-        <string>นอร์เวย์โค (NOK)</string>
-        <string>โฟรินท์ฮังการี (HUF)</string>
-        <string>ดอลลาร์นิวซีแลนด์ (NZD)</string>
-        <string>ริงกิตมาเลเซีย (MYR) </string>
-        <string>เงินรูเปียอินโดนีเซีย (IDR)</string>
-        <string>เกาหลีวอน (KRW) </string>
-        <string>เงินเยนของญี่ปุ่น (JPY)</string>
-        <string>เงินรูปีของอินเดีย (INR)</string>
-        <string>เงินเปโซของฟิลิปปินส์ (PHP)</string>
-        <string>Koruna เช็ก (CZK)</string>
-        <string>ดอลลาร์ฮ่องกง (HKD)</string>
-        <string>แรนด์ของแอฟริกาใต้ (ZAR)</string>
-        <string>ดอลลาร์แคนาดา (CAD)</string>
-    </array>
+<array>
+	<string>หยวนจีน (CNY)</string>
+	<string>โปแลนด์ Zloty (PLN)</string>
+	<string>บาทไทย (THB)</string>
+	<string>บัลแกเรีย Lev (BGN)</string>
+	<string>ดอลลาร์ออสเตรเลีย (AUD)</string>
+	<string>โครนสวีเดน (SEK)</string>
+	<string>เงิน Shekel ใหม่ของอิสราเอล (ILS)</string>
+	<string>เรียลของบราซิล (BRL)</string>
+	<string>Krone เดนมาร์ก (DKK)</string>
+	<string>ปอนด์ (GBP)</string>
+	<string>รูเบิลรัสเซีย (RUB)</string>
+	<string> ฟรังก์สวิสเซอร์แลนด์ (CHF) </string>
+	<string>เงินเปโซเม็กซิกัน (MXN)</string>
+	<string>Kuna โครเอเชีย (HRK)</string>
+	<string>Leu โรมาเนีย (RON)</string>
+	<string>ลีราตุรกีใหม่ (TRY)</string>
+	<string>ดอลลาร์สิงคโปร์ (SGD)</string>
+	<string>ยูโร (EUR)</string>
+	<string>นอร์เวย์โค (NOK)</string>
+	<string>โฟรินท์ฮังการี (HUF)</string>
+	<string>ดอลลาร์นิวซีแลนด์ (NZD)</string>
+	<string>ดอลลาร์สหรัฐ (USD)</string>
+	<string>ริงกิตมาเลเซีย (MYR) </string>
+	<string>เงินรูเปียอินโดนีเซีย (IDR)</string>
+	<string>เกาหลีวอน (KRW) </string>
+	<string>เงินเยนของญี่ปุ่น (JPY)</string>
+	<string>เงินรูปีของอินเดีย (INR)</string>
+	<string>เงินเปโซของฟิลิปปินส์ (PHP)</string>
+	<string>Koruna เช็ก (CZK)</string>
+	<string>ดอลลาร์ฮ่องกง (HKD)</string>
+	<string>แรนด์ของแอฟริกาใต้ (ZAR)</string>
+	<string>ดอลลาร์แคนาดา (CAD)</string>
+</array>
 </plist>
