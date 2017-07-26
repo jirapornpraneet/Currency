@@ -34,15 +34,15 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PxO-hq-A03">
-                                <rect key="frame" x="48" y="358" width="225" height="145"/>
+                                <rect key="frame" x="48" y="347" width="225" height="145"/>
                                 <color key="backgroundColor" red="0.99545923219999999" green="0.95588789780000005" blue="0.95588789780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="gJ3-9I-tb9"/>
                                     <constraint firstAttribute="height" constant="145" id="zzj-l2-xls"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0m7-Jy-UTt">
-                                <rect key="frame" x="56" y="527" width="208" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0m7-Jy-UTt">
+                                <rect key="frame" x="56" y="524" width="208" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="208" id="dba-Nn-hA5"/>
                                     <constraint firstAttribute="height" constant="21" id="nPS-nX-NZ0"/>
@@ -65,7 +65,7 @@
                                 </items>
                             </navigationBar>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6f-AF-jCo">
-                                <rect key="frame" x="48" y="160" width="225" height="145"/>
+                                <rect key="frame" x="48" y="151" width="225" height="145"/>
                                 <color key="backgroundColor" red="0.99545923219999999" green="0.95588789783175543" blue="0.95588789783175543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="nPz-ct-0XA"/>
@@ -73,7 +73,7 @@
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="แปลงจากสกุลเงิน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yl1-zU-rmw">
-                                <rect key="frame" x="93" y="131" width="134" height="21"/>
+                                <rect key="frame" x="93" y="123" width="134" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="OUF-RX-1cf"/>
                                     <constraint firstAttribute="width" constant="134" id="WbD-UH-gwM"/>
@@ -83,7 +83,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ไปยังสกุลเงิน" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HR-El-hmV">
-                                <rect key="frame" x="93" y="329" width="134" height="21"/>
+                                <rect key="frame" x="93" y="318" width="134" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="hZH-J0-Akx"/>
                                     <constraint firstAttribute="height" constant="21" id="lDd-kZ-PqH"/>
@@ -95,19 +95,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="0m7-Jy-UTt" firstAttribute="top" secondItem="PxO-hq-A03" secondAttribute="bottom" constant="24" id="0Pm-uo-ESZ"/>
+                            <constraint firstItem="0m7-Jy-UTt" firstAttribute="top" secondItem="PxO-hq-A03" secondAttribute="bottom" constant="32" id="0Pm-uo-ESZ"/>
                             <constraint firstItem="yl1-zU-rmw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A8u-V5-FzU"/>
                             <constraint firstItem="5HR-El-hmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gpn-oN-5BR"/>
                             <constraint firstItem="gY9-XW-ACd" firstAttribute="top" secondItem="bqL-hE-RPF" secondAttribute="bottom" constant="15" id="JZF-ez-caR"/>
                             <constraint firstItem="0m7-Jy-UTt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OH4-X6-L20"/>
                             <constraint firstItem="M6f-AF-jCo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P6J-i9-XS4"/>
-                            <constraint firstItem="5HR-El-hmV" firstAttribute="top" secondItem="M6f-AF-jCo" secondAttribute="bottom" constant="24" id="Y6y-02-pse"/>
+                            <constraint firstItem="5HR-El-hmV" firstAttribute="top" secondItem="M6f-AF-jCo" secondAttribute="bottom" constant="22" id="Y6y-02-pse"/>
                             <constraint firstItem="gY9-XW-ACd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hT4-g4-w9Y"/>
                             <constraint firstItem="PxO-hq-A03" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iJb-Nt-ouZ"/>
-                            <constraint firstItem="M6f-AF-jCo" firstAttribute="top" secondItem="yl1-zU-rmw" secondAttribute="bottom" constant="8" id="mEm-Gx-cSd"/>
+                            <constraint firstItem="M6f-AF-jCo" firstAttribute="top" secondItem="yl1-zU-rmw" secondAttribute="bottom" constant="7" id="mEm-Gx-cSd"/>
                             <constraint firstItem="bqL-hE-RPF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qdk-5F-pKE"/>
                             <constraint firstItem="PxO-hq-A03" firstAttribute="top" secondItem="5HR-El-hmV" secondAttribute="bottom" constant="8" id="sc0-no-M9m"/>
-                            <constraint firstItem="yl1-zU-rmw" firstAttribute="top" secondItem="gY9-XW-ACd" secondAttribute="bottom" constant="22" id="smb-W2-jG4"/>
+                            <constraint firstItem="yl1-zU-rmw" firstAttribute="top" secondItem="gY9-XW-ACd" secondAttribute="bottom" constant="14" id="smb-W2-jG4"/>
                             <constraint firstAttribute="trailing" secondItem="bqL-hE-RPF" secondAttribute="trailing" id="yvE-Kt-HHV"/>
                             <constraint firstItem="bqL-hE-RPF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zG1-uf-Ps8"/>
                         </constraints>
