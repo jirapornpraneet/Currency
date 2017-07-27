@@ -15,35 +15,31 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var currencyField: UITextField!
     @IBOutlet weak var currencyPickerView: UIPickerView!
     @IBOutlet weak var convertCurrencyPickerView: UIPickerView!
-    var getDataCurrencies = ""
-    var getDataConvertCurrencies = ""
-    var currencyAmount = 0.0
-    var getJson = JSON([String: Any]())
     override func viewDidLoad() {
         super.viewDidLoad()
         currencyField.text = ""
         currencyField.delegate = self
+        currencyField.layer.masksToBounds = true
+        currencyField.layer.cornerRadius = 10
         currencyPickerView.delegate = self
         currencyPickerView.dataSource = self
+        currencyPickerView.layer.masksToBounds = true
+        currencyPickerView.layer.cornerRadius = 10
         convertCurrencyPickerView.delegate = self
         convertCurrencyPickerView.dataSource = self
-        currencyPickerView.layer.masksToBounds = true
-        currencyPickerView.layer.cornerRadius = 8
         convertCurrencyPickerView.layer.masksToBounds = true
-        convertCurrencyPickerView.layer.cornerRadius = 8
-        currencyField.layer.masksToBounds = true
-        currencyField.layer.cornerRadius = 8
+        convertCurrencyPickerView.layer.cornerRadius = 10
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        let pathShowDataCurrenciesPickerView = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
-        let showDataCurrenciesPickerView = (NSArray(contentsOfFile: pathShowDataCurrenciesPickerView) as? [String])!
+        let path = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
+        let dataCurrencies = (NSArray(contentsOfFile: path) as? [String])!
         if pickerView == currencyPickerView {
-            return showDataCurrenciesPickerView.count
+            return dataCurrencies.count
         } else {
-            return showDataCurrenciesPickerView.count
+            return dataCurrencies.count
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -51,16 +47,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let dataCurrencies = (NSArray(contentsOfFile: path) as? [String])!
             return dataCurrencies[row]
     }
+    var getJson = JSON([String: Any]())
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             let path = Bundle.main.path(forResource: "currencies", ofType: "plist")!
             let dataCurrencies = (NSArray(contentsOfFile: path) as? [String])!
         if pickerView == currencyPickerView {
-            getDataCurrencies = dataCurrencies[row]
+            let getDataCurrencies = dataCurrencies[row]
             getDataCurrenciesAPI(base: getDataCurrencies)
             print(dataCurrencies[row])
         } else {
-            getDataConvertCurrencies = dataCurrencies[row]
-            let currency = self.getDataConvertCurrencies
+            let getDataConvertCurrencies = dataCurrencies[row]
+            let currency = getDataConvertCurrencies
             let currencyRates = self.getJson["rates"]["\(currency)"].doubleValue
             print(dataCurrencies[row])
             print("CurrencyRates: \(currencyRates)")
@@ -81,13 +78,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     func convert(rates: Double) {
         if let currencyAmount  = Double(self.currencyField.text!) {
-            print(rates)
             if rates == 0.0 {
-                let resultCurrencyRatesConvert = currencyAmount * currencyAmount
+                let resultCurrencyRatesConvert = currencyAmount
                 self.currencyLabel.text = String(format: "%.0f", (resultCurrencyRatesConvert))
             } else {
                 let resultCurrencyRatesConvert = currencyAmount * rates
@@ -97,7 +92,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let resultCurrencyRatesConvert = 0 * rates
             self.currencyLabel.text = String(format: "%.03f", (resultCurrencyRatesConvert))
         }
-
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
