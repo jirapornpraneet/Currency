@@ -3,36 +3,36 @@
 <plist version="1.0">
 <array>
 	<string>หยวนจีน (CNY)</string>
-	<string>โปแลนด์ Zloty (PLN)</string>
+	<string>ซโลว์ทิโปลิชท์ (PLN)</string>
 	<string>บาทไทย (THB)</string>
-	<string>บัลแกเรีย Lev (BGN)</string>
+	<string>เลฟบัลแกเรีย (BGN)</string>
 	<string>ดอลลาร์ออสเตรเลีย (AUD)</string>
 	<string>โครนสวีเดน (SEK)</string>
-	<string>เงิน Shekel ใหม่ของอิสราเอล (ILS)</string>
-	<string>เรียลของบราซิล (BRL)</string>
-	<string>Krone เดนมาร์ก (DKK)</string>
-	<string>ปอนด์ (GBP)</string>
+	<string>ชาร์คิลล์อิสราเอล (ILS)</string>
+	<string>เรียลบราซิล (BRL)</string>
+	<string>โคลนน์เดนมาร์ก (DKK)</string>
+	<string>ปอนด์อังกฤษ (GBP)</string>
 	<string>รูเบิลรัสเซีย (RUB)</string>
-	<string> ฟรังก์สวิสเซอร์แลนด์ (CHF) </string>
-	<string>เงินเปโซเม็กซิกัน (MXN)</string>
-	<string>Kuna โครเอเชีย (HRK)</string>
-	<string>Leu โรมาเนีย (RON)</string>
+	<string>ฟรังก์สวิสเซอร์แลนด์ (CHF) </string>
+	<string>เปโซเม็กซิกัน (MXN)</string>
+	<string>คูนาโครเอเชีย (HRK)</string>
+	<string>โรมาเนียล นิว ยิลว์(RON)</string>
 	<string>ลีราตุรกีใหม่ (TRY)</string>
 	<string>ดอลลาร์สิงคโปร์ (SGD)</string>
 	<string>ยูโร (EUR)</string>
-	<string>นอร์เวย์โค (NOK)</string>
+	<string>โครเนอร์นอร์เวย์ (NOK)</string>
 	<string>โฟรินท์ฮังการี (HUF)</string>
 	<string>ดอลลาร์นิวซีแลนด์ (NZD)</string>
 	<string>ดอลลาร์สหรัฐ (USD)</string>
 	<string>ริงกิตมาเลเซีย (MYR) </string>
-	<string>เงินรูเปียอินโดนีเซีย (IDR)</string>
+	<string>รูเปียอินโดนีเซีย (IDR)</string>
 	<string>เกาหลีวอน (KRW) </string>
-	<string>เงินเยนของญี่ปุ่น (JPY)</string>
-	<string>เงินรูปีของอินเดีย (INR)</string>
-	<string>เงินเปโซของฟิลิปปินส์ (PHP)</string>
-	<string>Koruna เช็ก (CZK)</string>
+	<string>เยนญี่ปุ่น (JPY)</string>
+	<string>รูปีอินเดีย (INR)</string>
+	<string>เปโซฟิลิปปินส์ (PHP)</string>
+	<string>โคลูนาเช็ก (CZK)</string>
 	<string>ดอลลาร์ฮ่องกง (HKD)</string>
-	<string>แรนด์ของแอฟริกาใต้ (ZAR)</string>
+	<string>แรนด์แอฟริกาใต้ (ZAR)</string>
 	<string>ดอลลาร์แคนาดา (CAD)</string>
 </array>
 </plist>
