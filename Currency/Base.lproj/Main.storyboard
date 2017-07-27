@@ -71,6 +71,11 @@
                                     <constraint firstAttribute="width" constant="278" id="nPz-ct-0XA"/>
                                     <constraint firstAttribute="height" constant="145" id="zmH-Hr-VEN"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.92017662525177002" green="0.48231549718539363" blue="0.5084459472812296" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="แปลงจากสกุลเงิน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yl1-zU-rmw">
                                 <rect key="frame" x="93" y="123" width="134" height="21"/>

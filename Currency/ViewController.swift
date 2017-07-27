@@ -71,6 +71,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             case .success(let value):
                 self.getJson = JSON(value)
                 print("%@", self.getJson["rates"]["RON"])
+                print(self.getJson)
             case .failure(let error):
                 print(error)
             }
