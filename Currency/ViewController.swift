@@ -15,8 +15,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var currencyField: UITextField!
     @IBOutlet weak var currencyPickerView: UIPickerView!
     @IBOutlet weak var convertCurrencyPickerView: UIPickerView!
-    var selectDataCurrencies = ""
-    var selectConvertCurrencies = ""
+    var getDataCurrencies = ""
+    var getDataConvertCurrencies = ""
     var currencyAmount = 0.0
     var getJson = JSON([String: Any]())
     override func viewDidLoad() {
@@ -47,27 +47,27 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            let pathShowDataCurrenciesPickerView = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
-            let showDataCurrenciesPickerView = (NSArray(contentsOfFile: pathShowDataCurrenciesPickerView) as? [String])!
-            return showDataCurrenciesPickerView[row]
+            let path = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
+            let dataCurrencies = (NSArray(contentsOfFile: path) as? [String])!
+            return dataCurrencies[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            let pathDataCurrencies = Bundle.main.path(forResource: "currencies", ofType: "plist")!
-            let dataCurrencies = (NSArray(contentsOfFile: pathDataCurrencies) as? [String])!
+            let path = Bundle.main.path(forResource: "currencies", ofType: "plist")!
+            let dataCurrencies = (NSArray(contentsOfFile: path) as? [String])!
         if pickerView == currencyPickerView {
-            selectDataCurrencies = dataCurrencies[row]
-            selectDataCurrenciesAPI(base: selectDataCurrencies)
+            getDataCurrencies = dataCurrencies[row]
+            getDataCurrenciesAPI(base: getDataCurrencies)
             print(dataCurrencies[row])
         } else {
-            selectConvertCurrencies = dataCurrencies[row]
-            let currency = self.selectConvertCurrencies
+            getDataConvertCurrencies = dataCurrencies[row]
+            let currency = self.getDataConvertCurrencies
             let currencyRates = self.getJson["rates"]["\(currency)"].doubleValue
             print(dataCurrencies[row])
             print("CurrencyRates: \(currencyRates)")
             convert(rates: currencyRates)
         }
     }
-    func selectDataCurrenciesAPI(base: String) {
+    func getDataCurrenciesAPI(base: String) {
         let url = String(format:"http://api.fixer.io/latest?base=%@", base)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
