@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>หยวนจีน (CNY)</string>
+	<string>ซโลว์ทิโปลิชท์ (PLN)</string>
+	<string>บาทไทย (THB)</string>
+	<string>เลฟบัลแกเรีย (BGN)</string>
+	<string>ดอลลาร์ออสเตรเลีย (AUD)</string>
+	<string>โครนสวีเดน (SEK)</string>
+	<string>ชาร์คิลล์อิสราเอล (ILS)</string>
+	<string>เรียลบราซิล (BRL)</string>
+	<string>โคลนน์เดนมาร์ก (DKK)</string>
+	<string>ปอนด์อังกฤษ (GBP)</string>
+	<string>รูเบิลรัสเซีย (RUB)</string>
+	<string>ฟรังก์สวิสเซอร์แลนด์ (CHF) </string>
+	<string>เปโซเม็กซิกัน (MXN)</string>
+	<string>คูนาโครเอเชีย (HRK)</string>
+	<string>โรมาเนียล นิว ยิลว์(RON)</string>
+	<string>ลีราตุรกีใหม่ (TRY)</string>
+	<string>ดอลลาร์สิงคโปร์ (SGD)</string>
+	<string>ยูโร (EUR)</string>
+	<string>โครเนอร์นอร์เวย์ (NOK)</string>
+	<string>โฟรินท์ฮังการี (HUF)</string>
+	<string>ดอลลาร์นิวซีแลนด์ (NZD)</string>
+	<string>ดอลลาร์สหรัฐ (USD)</string>
+	<string>ริงกิตมาเลเซีย (MYR) </string>
+	<string>รูเปียอินโดนีเซีย (IDR)</string>
+	<string>เกาหลีวอน (KRW) </string>
+	<string>เยนญี่ปุ่น (JPY)</string>
+	<string>รูปีอินเดีย (INR)</string>
+	<string>เปโซฟิลิปปินส์ (PHP)</string>
+	<string>โคลูนาเช็ก (CZK)</string>
+	<string>ดอลลาร์ฮ่องกง (HKD)</string>
+	<string>แรนด์แอฟริกาใต้ (ZAR)</string>
+	<string>ดอลลาร์แคนาดา (CAD)</string>
+</array>
+</plist>

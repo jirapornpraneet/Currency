@@ -9,25 +9,105 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import AAPickerView
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+
+    @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var currencyField: UITextField!
+    @IBOutlet weak var currencyPickerView: UIPickerView!
+    @IBOutlet weak var convertCurrencyPickerView: UIPickerView!
+    var getJson = JSON([String: Any]())
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = String(format:"http://api.fixer.io/latest?base=%@", "USD")
+        currencyField.text = ""
+        currencyField.delegate = self
+        currencyField.layer.masksToBounds = true
+        currencyField.layer.cornerRadius = 10
+        currencyPickerView.delegate = self
+        currencyPickerView.dataSource = self
+        currencyPickerView.layer.masksToBounds = true
+        currencyPickerView.layer.cornerRadius = 10
+        convertCurrencyPickerView.delegate = self
+        convertCurrencyPickerView.dataSource = self
+        convertCurrencyPickerView.layer.masksToBounds = true
+        convertCurrencyPickerView.layer.cornerRadius = 10
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func getDataCurrenciesAPI(base: String) {
+
+        let url = String(format:"http://data.fixer.io/api/latest?access_key=6e76962e634f5d3d353426df1a2e05bf&base=%@",
+                         base)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                print(response)
-                print("rates")
+                self.getJson = JSON(value)
+                print("%@", self.getJson["rates"]["RON"])
+                print(self.getJson)
             case .failure(let error):
                 print(error)
             }
         }
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        let path = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
+        let dataCurrencies = (NSArray(contentsOfFile: path) as? [String])!
+        if pickerView == currencyPickerView {
+            return dataCurrencies.count
+        } else {
+            return dataCurrencies.count
+        }
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            let path = Bundle.main.path(forResource: "currenciesShow", ofType: "plist")!
+            let dataCurrencies = (NSArray(contentsOfFile: path) as? [String])!
+            return dataCurrencies[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            let path = Bundle.main.path(forResource: "currencies", ofType: "plist")!
+            let dataCurrencies = (NSArray(contentsOfFile: path) as? [String])!
+        if pickerView == currencyPickerView {
+            let getDataCurrencies = dataCurrencies[row]
+            getDataCurrenciesAPI(base: getDataCurrencies)
+            print(dataCurrencies[row])
+        } else {
+            let getDataConvertCurrencies = dataCurrencies[row]
+            let currency = getDataConvertCurrencies
+            let currencyRates = self.getJson["rates"]["\(currency)"].doubleValue
+            print(dataCurrencies[row])
+            print("CurrencyRates: \(currencyRates)")
+            convert(rates: currencyRates)
+        }
+    }
+
+    func convert(rates: Double) {
+        if let currencyAmount  = Double(self.currencyField.text!) {
+            if rates == 0.0 {
+                let resultCurrencyRatesConvert = currencyAmount
+                self.currencyLabel.text = String(format: "%.0f", (resultCurrencyRatesConvert))
+            } else {
+                let resultCurrencyRatesConvert = currencyAmount * rates
+                self.currencyLabel.text = String(format: "%.06f", (resultCurrencyRatesConvert))
+            }
+        } else {
+            let resultCurrencyRatesConvert = 0 * rates
+            self.currencyLabel.text = String(format: "%.03f", (resultCurrencyRatesConvert))
+        }
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        currencyField.resignFirstResponder()
+        return true
     }
 }
